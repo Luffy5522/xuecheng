@@ -7,3 +7,8 @@ Content-Type: application/json
   "courseName": "java",
   "publishStatus": "203001"
 }
+
+
+###
+Get {{content_host}}/content/course-category/tree-nodes
+Content-Type: application/json
