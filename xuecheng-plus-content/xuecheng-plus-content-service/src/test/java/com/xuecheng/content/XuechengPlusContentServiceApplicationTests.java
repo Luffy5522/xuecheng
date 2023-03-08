@@ -46,6 +46,11 @@ class XuechengPlusContentServiceApplicationTests {
 
     }
 
+    @Test
+    void testAddCourseBase(){
+
+    }
+
 
 
     @Test

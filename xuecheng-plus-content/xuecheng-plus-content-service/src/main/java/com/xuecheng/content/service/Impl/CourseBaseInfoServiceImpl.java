@@ -1,5 +1,7 @@
 package com.xuecheng.content.service.Impl;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xuecheng.base.model.PageParams;
@@ -7,6 +9,7 @@ import com.xuecheng.base.model.PageResult;
 import com.xuecheng.content.mapper.CourseBaseMapper;
 import com.xuecheng.content.mapper.CourseCategoryMapper;
 import com.xuecheng.content.mapper.CourseMarketMapper;
+import com.xuecheng.content.model.Constans.dictionary;
 import com.xuecheng.content.model.dto.AddCourseDto;
 import com.xuecheng.content.model.dto.CourseBaseInfoDto;
 import com.xuecheng.content.model.dto.QueryCourseParamsDto;
@@ -14,6 +17,7 @@ import com.xuecheng.content.model.po.CourseBase;
 import com.xuecheng.content.model.po.CourseCategory;
 import com.xuecheng.content.model.po.CourseMarket;
 import com.xuecheng.content.service.CourseBaseInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.BeanUtils;
@@ -29,6 +33,7 @@ import java.util.List;
  * @date: 2023/2/24 19:00
  * @description:
  */
+@Slf4j
 @Service
 public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 
@@ -76,7 +81,7 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
                 pageParams.getPageNo(), pageParams.getPageSize());
     }
 
-
+    // 新建课程
     @Transactional
     @Override
     public CourseBaseInfoDto createCourseBase(Long companyId, AddCourseDto dto) {
@@ -112,39 +117,36 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 
         //新增对象
         CourseBase courseBaseNew = new CourseBase();
-
         //将填写的课程信息赋值给新增对象
         BeanUtils.copyProperties(dto, courseBaseNew);
-
         //设置审核状态
-        courseBaseNew.setAuditStatus("202002");
+        courseBaseNew.setAuditStatus(dictionary.AUDIT_STATUS_NOT_PASS.getCode());
         //设置发布状态
-        courseBaseNew.setStatus("203001");
+        courseBaseNew.setStatus(dictionary.STATUS_OUT_PUBLISH.getCode());
         //机构id
         courseBaseNew.setCompanyId(companyId);
         //添加时间
         courseBaseNew.setCreateDate(LocalDateTime.now());
-
         //插入课程基本信息表
         int insert = courseBaseMapper.insert(courseBaseNew);
         Long courseId = courseBaseNew.getId();
-
         //课程营销信息
         CourseMarket courseMarketNew = new CourseMarket();
         BeanUtils.copyProperties(dto, courseMarketNew);
         courseMarketNew.setId(courseId);
-
         //收费规则
         String charge = dto.getCharge();
 
         //收费课程必须写价格且价格大于0
-        if (charge.equals("201001")) {
-            double price = dto.getPrice().doubleValue();
+        if (charge.equals(dictionary.PRICE_STATUS_PAY.getCode())) {
+            if (dto.getPrice() == null){
+                throw new RuntimeException("收费价格不能为空");
+            };
+
+            float price = dto.getPrice().floatValue();
             if (price <= 0) {
-                throw new RuntimeException("收费课程,价格不能为空");
+                throw new RuntimeException("课程设置了必须大于0");
             }
-
-
         }
 
         //插入课程营销信息
@@ -155,26 +157,23 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         }
         //添加成功
         //返回添加的课程信息
-        return getCourseBaseInfo(courseId);
+
+        return getCourseBaseInfoDto(courseId);
 
     }
 
-    //根据课程id查询课程基本信息，包括基本信息和营销信息
-    public CourseBaseInfoDto getCourseBaseInfo(long courseId) {
+    public CourseBaseInfoDto getCourseBaseInfoDto(Long id) {
 
-        CourseBase courseBase = courseBaseMapper.selectById(courseId);
-        CourseMarket courseMarket = courseMarketMapper.selectById(courseId);
+        CourseBase courseBase = courseBaseMapper.selectById(id);
+        CourseMarket courseMarket = courseMarketMapper.selectById(id);
 
-        if (courseBase == null) {
-            return null;
+        if (courseBase == null || courseMarket == null){
+            throw new RuntimeException("id错误");
         }
 
         CourseBaseInfoDto courseBaseInfoDto = new CourseBaseInfoDto();
-        BeanUtils.copyProperties(courseBase, courseBaseInfoDto);
-
-        if (courseMarket != null) {
-            BeanUtils.copyProperties(courseMarket, courseBaseInfoDto);
-        }
+        BeanUtil.copyProperties(courseBase, courseBaseInfoDto);
+        BeanUtil.copyProperties(courseMarket, courseBaseInfoDto);
 
         //查询分类名称
         CourseCategory courseCategoryBySt = courseCategoryMapper.selectById(courseBase.getSt());
@@ -183,6 +182,5 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         courseBaseInfoDto.setMtName(courseCategoryByMt.getName());
 
         return courseBaseInfoDto;
-
     }
 }

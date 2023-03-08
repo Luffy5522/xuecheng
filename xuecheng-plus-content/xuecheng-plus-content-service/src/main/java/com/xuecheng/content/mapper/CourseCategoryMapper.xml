@@ -18,7 +18,8 @@
         id, name, label, parentid, is_show, orderby, is_leaf
     </sql>
 
-    <select id="selectTreeNodes" resultType="com.xuecheng.content.model.dto.CourseCategoryTreeDto" parameterType="string">
+    <select id="selectTreeNodes" resultType="com.xuecheng.content.model.dto.CourseCategoryTreeDto"
+            parameterType="string">
         with recursive t1 as (
         select * from  course_category p where  id= #{id}
                        union all

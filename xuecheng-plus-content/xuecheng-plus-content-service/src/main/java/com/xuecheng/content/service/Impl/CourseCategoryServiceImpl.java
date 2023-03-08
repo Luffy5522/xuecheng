@@ -4,7 +4,6 @@ import com.xuecheng.content.mapper.CourseCategoryMapper;
 import com.xuecheng.content.model.dto.CourseCategoryTreeDto;
 import com.xuecheng.content.service.CourseCategoryService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -27,28 +26,34 @@ public class CourseCategoryServiceImpl implements CourseCategoryService {
     @Override
     public List<CourseCategoryTreeDto> queryTreeNodes(String id) {
 
-        //查询数据库得到的课程分类
-        List<CourseCategoryTreeDto> courseCategoryTreeDtos = courseCategoryMapper.selectTreeNodes(id);
-        //最终返回的列表
-        List<CourseCategoryTreeDto> categoryTreeDtos = new ArrayList<>();
-        HashMap<String, CourseCategoryTreeDto> mapTemp = new HashMap<>();
 
-        courseCategoryTreeDtos.stream().forEach(item->{
-            mapTemp.put(item.getId(),item);
+        //查询数据库得到的课程分类
+        List<CourseCategoryTreeDto> courseCategoryTreeDtoList = courseCategoryMapper.selectTreeNodes(id);
+        //最终返回的列表
+        List<CourseCategoryTreeDto> categoryTreeDtoList = new ArrayList<>();
+        HashMap<String, CourseCategoryTreeDto> mapTemp = new HashMap<>();
+        // 将数据封装到list中,只包含了根节点的直接下属节点
+        courseCategoryTreeDtoList.stream().forEach(item -> {
+            mapTemp.put(item.getId(), item);
+
             //只将根节点的下级节点放入list
-            if(item.getParentid().equals(id)){
-                categoryTreeDtos.add(item);
+            if (item.getParentid().equals(id)) {
+                categoryTreeDtoList.add(item);
             }
+
+            // 找到该节点的父节点对象
             CourseCategoryTreeDto courseCategoryTreeDto = mapTemp.get(item.getParentid());
-            if(courseCategoryTreeDto!=null){
-                if(courseCategoryTreeDto.getChildrenTreeNodes() ==null){
-                    courseCategoryTreeDto.setChildrenTreeNodes(new ArrayList<CourseCategoryTreeDto>());
+
+            if (courseCategoryTreeDto != null) {
+                if (courseCategoryTreeDto.getChildrenTreeNodes() == null) {
+                    courseCategoryTreeDto.setChildrenTreeNodes
+                            (new ArrayList<CourseCategoryTreeDto>());
                 }
-                //向节点的下级节点list加入节点
+                // 找到子节点,放到他父节点的childTreeNode中
                 courseCategoryTreeDto.getChildrenTreeNodes().add(item);
             }
 
         });
-        return categoryTreeDtos;
+        return categoryTreeDtoList;
     }
 }
