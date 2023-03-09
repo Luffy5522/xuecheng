@@ -4,20 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51ce6d45-034c-458b-8472-189dcdec5eda" name="Default Changelist" comment="day02-完成了新增课程表功能(除上传图片外)">
-      <change afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/CommonError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/RestErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/XuechengException.java" afterDir="false" />
+    <list default="true" id="51ce6d45-034c-458b-8472-189dcdec5eda" name="Default Changelist" comment="day03-添加了全局异常处理">
+      <change afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/ValidationGroups.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-test/content-api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-test/content-api.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-base/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-base/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/RestErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/RestErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/controller/CourseBaseInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/controller/CourseBaseInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-model/src/main/java/com/xuecheng/content/model/dto/AddCourseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-model/src/main/java/com/xuecheng/content/model/dto/AddCourseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseBaseInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseBaseInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-api/src/main/java/com/xuecheng/system/SystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-api/src/main/java/com/xuecheng/system/SystemApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,8 +208,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.content-api#3" />
         <item itemvalue="Spring Boot.XuechengPlusContentApiApplication (1)" />
+        <item itemvalue="HTTP Request.content-api#3" />
         <item itemvalue="Application.dictionary" />
         <item itemvalue="JUnit.XuechengPlusContentServiceApplicationTests.testCourseCategoryService" />
         <item itemvalue="HTTP Request.content-api#2" />
@@ -240,7 +238,8 @@
       <workItem from="1678167300538" duration="1547000" />
       <workItem from="1678272065623" duration="10171000" />
       <workItem from="1678329670033" duration="3940000" />
-      <workItem from="1678334190532" duration="943000" />
+      <workItem from="1678334190532" duration="1876000" />
+      <workItem from="1678336412081" duration="1498000" />
     </task>
     <task id="LOCAL-00001" summary="day01-parent和model模块的创立">
       <created>1677237632837</created>
@@ -284,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678282278648</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="day03-添加了全局异常处理">
+      <created>1678335512171</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678335512171</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +317,8 @@
     <MESSAGE value="day02-解决跨域问题" />
     <MESSAGE value="day02-解决树形表的问题" />
     <MESSAGE value="day02-完成了新增课程表功能(除上传图片外)" />
-    <option name="LAST_COMMIT_MESSAGE" value="day02-完成了新增课程表功能(除上传图片外)" />
+    <MESSAGE value="day03-添加了全局异常处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="day03-添加了全局异常处理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -328,8 +335,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="8" />
+          <line>40</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

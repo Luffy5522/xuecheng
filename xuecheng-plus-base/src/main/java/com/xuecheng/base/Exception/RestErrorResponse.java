@@ -10,12 +10,12 @@ import java.io.Serializable;
  * @description: 响应用户的统一类型
  */
 @NoArgsConstructor
-public class RestErrorHandler implements Serializable {
+public class RestErrorResponse implements Serializable {
 
     private String errMessage;
 
 
-    public RestErrorHandler(String errMessage) {
+    public RestErrorResponse(String errMessage) {
         this.errMessage = errMessage;
     }
 

@@ -87,34 +87,34 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
     @Override
     public CourseBaseInfoDto createCourseBase(Long companyId, AddCourseDto dto) {
 
-        //合法性校验
-        if (StringUtils.isBlank(dto.getName())) {
-            throw new XuechengException("课程分类为空");
-        }
-
-        if (StringUtils.isBlank(dto.getMt())) {
-            throw new XuechengException("课程分类为空");
-        }
-
-        if (StringUtils.isBlank(dto.getSt())) {
-            throw new XuechengException("课程分类为空");
-        }
-
-        if (StringUtils.isBlank(dto.getGrade())) {
-            throw new XuechengException("课程等级为空");
-        }
-
-        if (StringUtils.isBlank(dto.getTeachmode())) {
-            throw new XuechengException("教育模式为空");
-        }
-
-        if (StringUtils.isBlank(dto.getUsers())) {
-            throw new XuechengException("适应人群为空");
-        }
-
-        if (StringUtils.isBlank(dto.getCharge())) {
-            throw new XuechengException("收费规则为空");
-        }
+        ////合法性校验
+        //if (StringUtils.isBlank(dto.getName())) {
+        //    throw new XuechengException("课程分类为空");
+        //}
+        //
+        //if (StringUtils.isBlank(dto.getMt())) {
+        //    throw new XuechengException("课程分类为空");
+        //}
+        //
+        //if (StringUtils.isBlank(dto.getSt())) {
+        //    throw new XuechengException("课程分类为空");
+        //}
+        //
+        //if (StringUtils.isBlank(dto.getGrade())) {
+        //    throw new XuechengException("课程等级为空");
+        //}
+        //
+        //if (StringUtils.isBlank(dto.getTeachmode())) {
+        //    throw new XuechengException("教育模式为空");
+        //}
+        //
+        //if (StringUtils.isBlank(dto.getUsers())) {
+        //    throw new XuechengException("适应人群为空");
+        //}
+        //
+        //if (StringUtils.isBlank(dto.getCharge())) {
+        //    throw new XuechengException("收费规则为空");
+        //}
 
         //新增对象
         CourseBase courseBaseNew = new CourseBase();
