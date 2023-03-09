@@ -5,24 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51ce6d45-034c-458b-8472-189dcdec5eda" name="Default Changelist" comment="day02-完成了新增课程表功能(除上传图片外)">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_7_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-model/src/main/java/com/xuecheng/content/model/Constans/dictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/CommonError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/RestErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/XuechengException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-test/content-api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-test/content-api.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xuecheng-plus-base/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-base/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/controller/CourseBaseInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/controller/CourseBaseInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/mapper/CourseCategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/mapper/CourseCategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/CourseCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/CourseCategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseBaseInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseBaseInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseCategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/test/java/com/xuecheng/content/XuechengPlusContentServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/test/java/com/xuecheng/content/XuechengPlusContentServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-api/xuecheng-plus-system-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-api/xuecheng-plus-system-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-model/xuecheng-plus-system-model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-model/xuecheng-plus-system-model.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-service/xuecheng-plus-system-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-service/xuecheng-plus-system-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-api/src/main/java/com/xuecheng/system/SystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-system/xuecheng-plus-system-api/src/main/java/com/xuecheng/system/SystemApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -130,6 +125,24 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
+    <option name="hiddenConfigurations">
+      <map>
+        <entry key="Application">
+          <value>
+            <set>
+              <option value="dictionary" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HttpClient.HttpRequestRunConfigurationType">
+          <value>
+            <set>
+              <option value="content-api#2" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="RunManager" selected="HTTP Request.content-api#3">
     <configuration name="dictionary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -141,19 +154,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -187,13 +187,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XuechengPlusBaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="xuecheng-plus-base" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xuecheng.XuechengPlusBaseApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="XuechengPlusContentApiApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="xuecheng-plus-content-api" />
       <extension name="coverage">
@@ -207,34 +200,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XuechengPlusContentApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="xuecheng-plus-content-api" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xuecheng.content.api.XuechengPlusContentApiApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="XuechengPlusContentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="xuecheng-plus-content" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xuecheng.content.XuechengPlusContentApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="XuechengPlusContentModelApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="xuecheng-plus-content-model" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xuecheng.content.model.XuechengPlusContentModelApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="XuechengPlusContentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="xuecheng-plus-content-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xuecheng.content.XuechengPlusContentServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.dictionary" />
+      <item itemvalue="HTTP Request.content-api#3" />
+      <item itemvalue="HTTP Request.content-api#2" />
+      <item itemvalue="JUnit.XuechengPlusContentServiceApplicationTests.testCourseCategoryService" />
+      <item itemvalue="Spring Boot.SystemApplication" />
+      <item itemvalue="Spring Boot.XuechengPlusContentApiApplication (1)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.content-api#3" />
@@ -265,7 +238,9 @@
       <workItem from="1677551902086" duration="101000" />
       <workItem from="1677642164198" duration="147000" />
       <workItem from="1678167300538" duration="1547000" />
-      <workItem from="1678272065623" duration="9670000" />
+      <workItem from="1678272065623" duration="10171000" />
+      <workItem from="1678329670033" duration="3940000" />
+      <workItem from="1678334190532" duration="943000" />
     </task>
     <task id="LOCAL-00001" summary="day01-parent和model模块的创立">
       <created>1677237632837</created>
@@ -302,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677295683264</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="day02-完成了新增课程表功能(除上传图片外)">
+      <created>1678282278648</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678282278648</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +325,11 @@
           <url>file://$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/test/java/com/xuecheng/content/XuechengPlusContentServiceApplicationTests.java</url>
           <line>57</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

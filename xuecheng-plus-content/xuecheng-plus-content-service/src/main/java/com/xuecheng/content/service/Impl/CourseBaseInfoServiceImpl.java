@@ -4,6 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xuecheng.base.Exception.XuechengException;
 import com.xuecheng.base.model.PageParams;
 import com.xuecheng.base.model.PageResult;
 import com.xuecheng.content.mapper.CourseBaseMapper;
@@ -88,31 +89,31 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 
         //合法性校验
         if (StringUtils.isBlank(dto.getName())) {
-            throw new RuntimeException("课程名称为空");
+            throw new XuechengException("课程分类为空");
         }
 
         if (StringUtils.isBlank(dto.getMt())) {
-            throw new RuntimeException("课程分类为空");
+            throw new XuechengException("课程分类为空");
         }
 
         if (StringUtils.isBlank(dto.getSt())) {
-            throw new RuntimeException("课程分类为空");
+            throw new XuechengException("课程分类为空");
         }
 
         if (StringUtils.isBlank(dto.getGrade())) {
-            throw new RuntimeException("课程等级为空");
+            throw new XuechengException("课程等级为空");
         }
 
         if (StringUtils.isBlank(dto.getTeachmode())) {
-            throw new RuntimeException("教育模式为空");
+            throw new XuechengException("教育模式为空");
         }
 
         if (StringUtils.isBlank(dto.getUsers())) {
-            throw new RuntimeException("适应人群为空");
+            throw new XuechengException("适应人群为空");
         }
 
         if (StringUtils.isBlank(dto.getCharge())) {
-            throw new RuntimeException("收费规则为空");
+            throw new XuechengException("收费规则为空");
         }
 
         //新增对象
@@ -140,12 +141,12 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         //收费课程必须写价格且价格大于0
         if (charge.equals(dictionary.PRICE_STATUS_PAY.getCode())) {
             if (dto.getPrice() == null){
-                throw new RuntimeException("收费价格不能为空");
+                throw new XuechengException("收费价格不能为空");
             };
 
             float price = dto.getPrice().floatValue();
             if (price <= 0) {
-                throw new RuntimeException("课程设置了必须大于0");
+                throw new XuechengException("收费课程价格不能小于0");
             }
         }
 
