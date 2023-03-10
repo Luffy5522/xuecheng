@@ -1,3 +1,36 @@
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Content-Type: application/json
+
+{
+  "auditStatus": "202004",
+  "courseName": "java",
+  "publishStatus": "203001"
+}
+
+<> 2023-03-10T172110.500.json
+
+###
+
+GET http://localhost:63040/content/teachplan/74/tree-nodes
+Content-Type: application/json
+
+<> 2023-03-10T172016.500.json
+
+###
+
+POST http://localhost:63010/content/course/list?pageNo=1&pageSize=2
+Content-Type: application/json
+
+{
+  "auditStatus": "202004",
+  "courseName": "java",
+  "publishStatus": "203001"
+}
+
+<> 2023-03-10T164829.500.json
+
+###
+
 POST http://localhost:63040/content/teachplan
 Content-Type: application/json
 

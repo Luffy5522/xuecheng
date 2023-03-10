@@ -17,6 +17,8 @@ spring:
 # 日志文件配置路径
 logging:
   config: classpath:log4j2-dev.xml
+  level:
+    com.alibaba.nacos.client.naming: WARN
 
 # swagger 文档配置
 swagger:
