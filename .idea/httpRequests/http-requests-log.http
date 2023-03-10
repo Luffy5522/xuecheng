@@ -1,3 +1,86 @@
+POST http://localhost:63040/content/teachplan
+Content-Type: application/json
+
+{
+  "changeDate" : null,
+  "courseId" : 22,
+  "cousePubId" : null,
+  "createDate" : null,
+  "ctlBarShow" : false,
+  "ctlEditTitle" : true,
+  "endTime" : null,
+  "grade" : "2",
+  "isPreview" : "1",
+  "mediaType" : "",
+  "orderby" : 1,
+  "parentid" : 237,
+  "pname" : "第1节修改名称",
+  "startTime" : null,
+  "status" : null,
+  "teachPlanId" : 240
+}
+
+###
+
+POST http://localhost:63040/content/teachplan
+Content-Type: application/json
+
+{
+  "courseId" : 74,
+  "parentid": 0,
+  "grade" : 1,
+  "pname" : "新章名称 [点击修改]"
+}
+
+###
+
+POST http://localhost:63040/content/teachplan
+Content-Type: application/json
+
+{
+  "courseId" : 74,
+  "parentid": 0,
+  "grade" : 1,
+  "pname" : "新章名称 [点击修改]"
+}
+
+<> 2023-03-10T114233.404.json
+
+###
+
+POST http://localhost:63040/teachplan
+Content-Type: application/json
+
+{
+  "courseId" : 74,
+  "parentid": 0,
+  "grade" : 1,
+  "pname" : "新章名称 [点击修改]"
+}
+
+<> 2023-03-10T114216.404.html
+
+###
+
+POST http://teachplan
+Content-Type: application/json
+
+{
+  "courseId" : 74,
+  "parentid": 0,
+  "grade" : 1,
+  "pname" : "新章名称 [点击修改]"
+}
+
+###
+
+GET http://localhost:63040/content/teachplan/74/tree-nodes
+Content-Type: application/json
+
+<> 2023-03-10T110554.200.json
+
+###
+
 PUT http://localhost:63040/content/course
 Content-Type: application/json
 
