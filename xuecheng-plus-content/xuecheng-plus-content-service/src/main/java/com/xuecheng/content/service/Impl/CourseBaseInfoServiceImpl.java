@@ -1,7 +1,6 @@
 package com.xuecheng.content.service.Impl;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xuecheng.base.Exception.XuechengException;
@@ -19,7 +18,6 @@ import com.xuecheng.content.model.po.CourseCategory;
 import com.xuecheng.content.model.po.CourseMarket;
 import com.xuecheng.content.service.CourseBaseInfoService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -140,9 +138,10 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 
         //收费课程必须写价格且价格大于0
         if (charge.equals(dictionary.PRICE_STATUS_PAY.getCode())) {
-            if (dto.getPrice() == null){
+            if (dto.getPrice() == null) {
                 throw new XuechengException("收费价格不能为空");
-            };
+            }
+            
 
             float price = dto.getPrice().floatValue();
             if (price <= 0) {
@@ -163,12 +162,38 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 
     }
 
+    // 根据id查询课程
+    @Override
+    public CourseBaseInfoDto selectCourseBaseInfoById(Long courseId) {
+        // 1.根据id进行查询
+        CourseBase courseBase = courseBaseMapper.selectById(courseId);
+        if (courseBase == null) {
+            log.info("课程id不存在");
+            throw new XuechengException("课程id不存在");
+        }
+
+        // 2.对courseMarket进行查询
+        CourseMarket courseMarket = courseMarketMapper.selectById(courseId);
+        if (courseMarket == null) {
+            log.info("课程营销信息不存在");
+            throw new XuechengException("课程营销信息不存在");
+        }
+
+        // 3.返回基本信息
+        CourseBaseInfoDto courseBaseInfoDto = new CourseBaseInfoDto();
+        // 3.1 进行属性连接
+        BeanUtil.copyProperties(courseBase, courseBaseInfoDto);
+        BeanUtil.copyProperties(courseMarket, courseBaseInfoDto);
+
+        return courseBaseInfoDto;
+    }
+
     public CourseBaseInfoDto getCourseBaseInfoDto(Long id) {
 
         CourseBase courseBase = courseBaseMapper.selectById(id);
         CourseMarket courseMarket = courseMarketMapper.selectById(id);
 
-        if (courseBase == null || courseMarket == null){
+        if (courseBase == null || courseMarket == null) {
             throw new RuntimeException("id错误");
         }
 

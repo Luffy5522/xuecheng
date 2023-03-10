@@ -11,9 +11,7 @@ import com.xuecheng.content.service.CourseBaseInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -44,5 +42,11 @@ public class CourseBaseInfoController {
     public CourseBaseInfoDto createCourseBase(@RequestBody @Validated({ValidationGroups.Insert.class}) AddCourseDto addCourseDto) {
         Long companyId = 22L;
         return courseBaseInfoService.createCourseBase(companyId, addCourseDto);
+    }
+
+    @ApiOperation("查询接口信息")
+    @GetMapping("/course/{courseId}")
+    public CourseBaseInfoDto selectCourseBaseInfoById(@PathVariable Long courseId){
+        return courseBaseInfoService.selectCourseBaseInfoById(courseId);
     }
 }

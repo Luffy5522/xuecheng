@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51ce6d45-034c-458b-8472-189dcdec5eda" name="Default Changelist" comment="day03-添加了全局异常处理">
-      <change afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/ValidationGroups.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-test/content-api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-test/content-api.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/RestErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/RestErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/XuechengException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/XuechengPlusContentApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/XuechengPlusContentApiApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/controller/CourseBaseInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/controller/CourseBaseInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-model/src/main/java/com/xuecheng/content/model/dto/AddCourseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-model/src/main/java/com/xuecheng/content/model/dto/AddCourseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/CourseBaseInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/CourseBaseInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseBaseInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseBaseInfoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,17 +131,10 @@
             </set>
           </value>
         </entry>
-        <entry key="HttpClient.HttpRequestRunConfigurationType">
-          <value>
-            <set>
-              <option value="content-api#2" />
-            </set>
-          </value>
-        </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.content-api#3">
+  <component name="RunManager" selected="HTTP Request.content-api#4">
     <configuration name="dictionary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.xuecheng.content.model.Constans.dictionary" />
       <module name="xuecheng-plus-content-model" />
@@ -156,10 +148,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="content-api#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api-test/content-api.http" index="2" runType="Run single request">
-      <method v="2" />
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="content-api#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api-test/content-api.http" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="content-api#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api-test/content-api.http" index="4" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="XuechengPlusContentServiceApplicationTests.testCourseCategoryService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -201,18 +204,18 @@
     <list>
       <item itemvalue="Application.dictionary" />
       <item itemvalue="HTTP Request.content-api#3" />
-      <item itemvalue="HTTP Request.content-api#2" />
       <item itemvalue="JUnit.XuechengPlusContentServiceApplicationTests.testCourseCategoryService" />
       <item itemvalue="Spring Boot.SystemApplication" />
       <item itemvalue="Spring Boot.XuechengPlusContentApiApplication (1)" />
+      <item itemvalue="HTTP Request.content-api#4" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.content-api#4" />
         <item itemvalue="Spring Boot.XuechengPlusContentApiApplication (1)" />
         <item itemvalue="HTTP Request.content-api#3" />
         <item itemvalue="Application.dictionary" />
         <item itemvalue="JUnit.XuechengPlusContentServiceApplicationTests.testCourseCategoryService" />
-        <item itemvalue="HTTP Request.content-api#2" />
       </list>
     </recent_temporary>
   </component>
@@ -240,6 +243,7 @@
       <workItem from="1678329670033" duration="3940000" />
       <workItem from="1678334190532" duration="1876000" />
       <workItem from="1678336412081" duration="1498000" />
+      <workItem from="1678412133624" duration="2140000" />
     </task>
     <task id="LOCAL-00001" summary="day01-parent和model模块的创立">
       <created>1677237632837</created>
