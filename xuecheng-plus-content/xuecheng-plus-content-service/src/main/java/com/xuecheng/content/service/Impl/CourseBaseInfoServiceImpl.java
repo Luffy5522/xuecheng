@@ -12,6 +12,7 @@ import com.xuecheng.content.mapper.CourseMarketMapper;
 import com.xuecheng.content.model.Constans.dictionary;
 import com.xuecheng.content.model.dto.AddCourseDto;
 import com.xuecheng.content.model.dto.CourseBaseInfoDto;
+import com.xuecheng.content.model.dto.EditCourseDto;
 import com.xuecheng.content.model.dto.QueryCourseParamsDto;
 import com.xuecheng.content.model.po.CourseBase;
 import com.xuecheng.content.model.po.CourseCategory;
@@ -44,6 +45,9 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
 
     @Resource
     CourseCategoryMapper courseCategoryMapper;
+
+    @Resource
+    CourseMarketServiceImpl courseMarketService;
 
     @Override
     public PageResult<CourseBase> queryCourseBaseList(PageParams pageParams,
@@ -141,7 +145,7 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
             if (dto.getPrice() == null) {
                 throw new XuechengException("收费价格不能为空");
             }
-            
+
 
             float price = dto.getPrice().floatValue();
             if (price <= 0) {
@@ -186,6 +190,38 @@ public class CourseBaseInfoServiceImpl implements CourseBaseInfoService {
         BeanUtil.copyProperties(courseMarket, courseBaseInfoDto);
 
         return courseBaseInfoDto;
+    }
+
+    // 修改课程信息
+    @Override
+    public CourseBaseInfoDto updateCourseBase(EditCourseDto editCourseDto) {
+        Long courseId = editCourseDto.getId();
+        // 1.查询课程是否存在
+        CourseBase courseBase = courseBaseMapper.selectById(courseId);
+        if (courseBase == null) {
+            log.info("查询时,课程id不存在");
+            throw new XuechengException("课程id不存在");
+        }
+        // 2.查询修改是否正确
+        // 2.1 业务逻辑中只要判断价格
+        if (editCourseDto.getCharge().equals(dictionary.PRICE_STATUS_PAY.getCode())) {
+            if (editCourseDto.getPrice() == null || editCourseDto.getPrice().floatValue() <= 0) {
+                log.info("收费课程,价格不能为0");
+                throw new XuechengException("收费课程,价格不能为0");
+            }
+        }
+
+
+        // 3.判断courseMarket是否存在,若存在,则修改,否则添加
+        CourseMarket courseMarket = courseMarketMapper.selectById(courseId);
+        courseMarketService.saveOrUpdate(courseMarket);
+
+        // 4.更新
+        BeanUtil.copyProperties(editCourseDto, courseBase);
+        courseBase.setChangePeople(editCourseDto.getUsers());
+        courseBase.setChangeDate(LocalDateTime.now());
+
+        return selectCourseBaseInfoById(courseId);
     }
 
     public CourseBaseInfoDto getCourseBaseInfoDto(Long id) {
