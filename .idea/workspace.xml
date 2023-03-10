@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51ce6d45-034c-458b-8472-189dcdec5eda" name="Default Changelist" comment="day03-添加了全局异常处理">
+    <list default="true" id="51ce6d45-034c-458b-8472-189dcdec5eda" name="Default Changelist" comment="day03-查询课程">
+      <change afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-model/src/main/java/com/xuecheng/content/model/dto/EditCourseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseMarketServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-test/content-api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-test/content-api.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/XuechengException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/XuechengPlusContentApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/XuechengPlusContentApiApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/controller/CourseBaseInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-api/src/main/java/com/xuecheng/content/controller/CourseBaseInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/CourseBaseInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/CourseBaseInfoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseBaseInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseBaseInfoServiceImpl.java" afterDir="false" />
@@ -34,6 +33,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -134,7 +134,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.content-api#4">
+  <component name="RunManager" selected="HTTP Request.content-api#5">
     <configuration name="dictionary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.xuecheng.content.model.Constans.dictionary" />
       <module name="xuecheng-plus-content-model" />
@@ -165,21 +165,8 @@
     <configuration name="content-api#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api-test/content-api.http" index="4" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="XuechengPlusContentServiceApplicationTests.testCourseCategoryService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="xuecheng-plus-content-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xuecheng.content.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.xuecheng.content" />
-      <option name="MAIN_CLASS_NAME" value="com.xuecheng.content.XuechengPlusContentServiceApplicationTests" />
-      <option name="METHOD_NAME" value="testCourseCategoryService" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="content-api#5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api-test/content-api.http" index="5" runType="Run single request">
+      <method v="2" />
     </configuration>
     <configuration name="SystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="xuecheng-plus-system-api" />
@@ -204,18 +191,18 @@
     <list>
       <item itemvalue="Application.dictionary" />
       <item itemvalue="HTTP Request.content-api#3" />
-      <item itemvalue="JUnit.XuechengPlusContentServiceApplicationTests.testCourseCategoryService" />
       <item itemvalue="Spring Boot.SystemApplication" />
       <item itemvalue="Spring Boot.XuechengPlusContentApiApplication (1)" />
       <item itemvalue="HTTP Request.content-api#4" />
+      <item itemvalue="HTTP Request.content-api#5" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.content-api#4" />
+        <item itemvalue="HTTP Request.content-api#5" />
         <item itemvalue="Spring Boot.XuechengPlusContentApiApplication (1)" />
+        <item itemvalue="HTTP Request.content-api#4" />
         <item itemvalue="HTTP Request.content-api#3" />
         <item itemvalue="Application.dictionary" />
-        <item itemvalue="JUnit.XuechengPlusContentServiceApplicationTests.testCourseCategoryService" />
       </list>
     </recent_temporary>
   </component>
@@ -243,7 +230,7 @@
       <workItem from="1678329670033" duration="3940000" />
       <workItem from="1678334190532" duration="1876000" />
       <workItem from="1678336412081" duration="1498000" />
-      <workItem from="1678412133624" duration="2140000" />
+      <workItem from="1678412133624" duration="4857000" />
     </task>
     <task id="LOCAL-00001" summary="day01-parent和model模块的创立">
       <created>1677237632837</created>
@@ -294,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678335512171</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="day03-查询课程">
+      <created>1678414488021</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678414488021</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +316,8 @@
     <MESSAGE value="day02-解决树形表的问题" />
     <MESSAGE value="day02-完成了新增课程表功能(除上传图片外)" />
     <MESSAGE value="day03-添加了全局异常处理" />
-    <option name="LAST_COMMIT_MESSAGE" value="day03-添加了全局异常处理" />
+    <MESSAGE value="day03-查询课程" />
+    <option name="LAST_COMMIT_MESSAGE" value="day03-查询课程" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -346,6 +341,11 @@
           <url>file://$PROJECT_DIR$/xuecheng-plus-base/src/main/java/com/xuecheng/base/Exception/GlobalExceptionHandler.java</url>
           <line>31</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/xuecheng-plus-content/xuecheng-plus-content-service/src/main/java/com/xuecheng/content/service/Impl/CourseBaseInfoServiceImpl.java</url>
+          <line>197</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

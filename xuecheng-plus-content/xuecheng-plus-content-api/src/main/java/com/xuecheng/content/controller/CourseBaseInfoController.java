@@ -5,6 +5,7 @@ import com.xuecheng.base.model.PageParams;
 import com.xuecheng.base.model.PageResult;
 import com.xuecheng.content.model.dto.AddCourseDto;
 import com.xuecheng.content.model.dto.CourseBaseInfoDto;
+import com.xuecheng.content.model.dto.EditCourseDto;
 import com.xuecheng.content.model.dto.QueryCourseParamsDto;
 import com.xuecheng.content.model.po.CourseBase;
 import com.xuecheng.content.service.CourseBaseInfoService;
@@ -44,9 +45,15 @@ public class CourseBaseInfoController {
         return courseBaseInfoService.createCourseBase(companyId, addCourseDto);
     }
 
-    @ApiOperation("查询接口信息")
+    @ApiOperation("查询课程信息")
     @GetMapping("/course/{courseId}")
     public CourseBaseInfoDto selectCourseBaseInfoById(@PathVariable Long courseId){
         return courseBaseInfoService.selectCourseBaseInfoById(courseId);
+    }
+
+    @ApiOperation("修改课程信息")
+    @PutMapping("/course")
+    public CourseBaseInfoDto updateCourseBase(@RequestBody EditCourseDto editCourseDto){
+        return courseBaseInfoService.updateCourseBase(editCourseDto);
     }
 }
